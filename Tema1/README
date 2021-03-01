@@ -1,0 +1,5 @@
+GRIGORE IRINA-DOMNICA
+GRUPA 325 CB
+
+Pentru implemetarea acestei teme am ales sa folosesc, pe langa main, doua functii: evaluate_expr, in care parcurg recursiv arborele, si string_to_number.
+In main, dupa apelul functiei getAST pun pe stiva adresa de inceput a structurii in care am stocate informatiile din arbore si apelez functia evaluate_expr. In aceasta functie verific informatia din root, daca este o operatie sar la label-ul corespunzator si apelez recursiv aceeasi functie atat pe stanga, cat si pe dreapta. Pentru a nu pierde numarul intors pe stanga, il pun pe stiva, urmand ca dupa ce fac si apelul pe copilul din dreapta sa il pun intr-un registru si sa il folosesc in cadrul operatiei. In momentul in care in arbore dau de un string care nu reprezinta niciuna dintre cele 4 operatii, apelez functia string_to_number care imi transforma stringul primit ca parametru in numar si il returnez in registrul eax.
