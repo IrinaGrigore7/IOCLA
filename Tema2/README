@@ -1,0 +1,14 @@
+GRIGORE IRINA-DOMNICA
+325CB
+
+Tema2 - Stegano
+
+La aceasta tema am realizat doar task-ul 3, din pacate.
+Pentru acesta am implementat functia ceruta in enunt(morse_encrypt) in felul 
+urmator: parcurg stringul primit ca parametru caracter cu caracter, il codific 
+si il introduc in imagine incepand de la byte-ul cu indexul primit ca parametru
+in functie. Ma folosesc de stiva pentru a pune codificarea literei respective 
+in imagine. De asemenea, cu registrul edx iterez prin string, iar cu registrul 
+edx parcurg fiecare pixel. Ma opresc in momentul in care ajung la '\0'.
+In main apelez functia de criptare, apoi o apelez pe cea de afisare, care imi 
+printeaza imaginea ce contine mesajul criptat.
