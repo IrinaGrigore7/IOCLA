@@ -1,9 +1,9 @@
 GRIGORE IRINA-DOMNICA
 325CB
 
-Tema2 - Stegano
+                            Tema2 - Stegano
 
-La aceasta tema am realizat doar task-ul 3, din pacate.
+La aceasta tema am realizat doar task-ul 3.
 Pentru acesta am implementat functia ceruta in enunt(morse_encrypt) in felul 
 urmator: parcurg stringul primit ca parametru caracter cu caracter, il codific 
 si il introduc in imagine incepand de la byte-ul cu indexul primit ca parametru
