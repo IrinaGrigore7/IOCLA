@@ -1,0 +1,80 @@
+%include "io.inc"
+extern printf
+
+section .data
+    before_format db "before %s", 13, 10, 0
+    after_format db "after %s", 13, 10, 0
+     mystring db "ana", 0, "are", 0, "mere", 0
+    len dd 10
+section .text
+global CMAIN
+
+toupper:
+    push ebp
+    mov ebp, esp
+
+    ; TODO
+   mov eax, [ebp + 8]
+   mov ecx, dword [len]
+    
+test_one_byte:
+    mov bl, byte [eax]
+    cmp ecx, 0
+    je out
+    
+    cmp bl, 109
+    jle add1
+    
+    cmp bl, 109
+    jg sub1
+  
+ 
+add1:
+    cmp bl, 0
+    je separator
+    add bl, 13
+    mov byte [eax], bl
+    inc eax 
+    dec ecx
+    jmp test_one_byte
+    
+sub1:
+    cmp bl, 0
+    je separator
+    sub bl, 13
+    mov byte [eax], bl
+    inc eax
+    dec ecx
+    jmp test_one_byte
+    
+separator:
+    add bl, 0x20
+    mov byte [eax], bl
+    inc eax 
+    dec ecx
+    jmp test_one_byte
+    
+out:
+    leave
+    ret
+
+CMAIN:
+    push ebp
+    mov ebp, esp
+
+    push mystring
+    push before_format
+    call printf
+    add esp, 8
+
+    push mystring
+    call toupper
+    add esp, 4
+
+    push mystring
+    push after_format
+    call printf
+    add esp, 8
+
+    leave
+    ret
